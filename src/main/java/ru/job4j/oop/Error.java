@@ -5,7 +5,7 @@ public class Error {
     private int status;
     private String description;
 
-    public Error() {}
+    public Error() { }
 
     public Error(boolean isCritical, int status, String description) {
         this.isCritical = isCritical;
@@ -18,6 +18,7 @@ public class Error {
         System.out.println("Статус код : " + status + " ошибки");
         System.out.println("Описание ошибки : " + description);
     }
+
     public static void main(String[] args) {
         Error err = new Error(false, 400, "BadRequest exception");
         err.printInfo();

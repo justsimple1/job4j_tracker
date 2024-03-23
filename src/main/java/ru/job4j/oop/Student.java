@@ -12,6 +12,5 @@ public class Student {
     public static void main(String[] args) {
         Student petya = new Student();
         String song = "I believe I can fly";
-
     }
 }
