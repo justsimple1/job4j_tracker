@@ -14,7 +14,7 @@ public class Error {
     }
 
     public void printInfo() {
-        System.out.println("Критическая ошибка? : "+ isCritical);
+        System.out.println("Критическая ошибка? : " + isCritical);
         System.out.println("Статус код : " + status + " ошибки");
         System.out.println("Описание ошибки : " + description);
     }
