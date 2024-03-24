@@ -21,4 +21,12 @@ public class PointTest {
         double expected = 0.0;
         assertThat(x.distance(y)).isEqualTo(expected);
     }
+
+    @Test()
+    public void whenThisPoint000AndThatPoint001ThenDistanceEqual1() {
+        Point x = new Point(0, 0, 0);
+        Point y = new Point(0, 0, 1);
+        double expected = 1;
+        assertThat(x.distance3d(y)).isEqualTo(expected);
+    }
 }
