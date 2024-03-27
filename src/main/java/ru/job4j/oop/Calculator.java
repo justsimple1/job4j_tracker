@@ -9,16 +9,15 @@ public class Calculator {
     }
 
     public static int minus(int y) {
-        return x - y;
+        return y - x;
     }
 
     public int divide(int y) {
-        return x / y;
+        return y / x;
     }
 
-    public void sumAllOperation(int y) {
-        int result = divide(y) + sum(y) + minus(y) + multiply(y);
-        System.out.println("Sum all operation is " + result);
+    public int sumAllOperation(int y) {
+        return divide(y) + sum(y) + minus(y) + multiply(y);
     }
 
     public int multiply(int a) {
@@ -35,6 +34,6 @@ public class Calculator {
         System.out.println("divide is " + divide);
         int multiple = calculator.multiply(3);
         System.out.println("multiple is " + multiple);
-        calculator.sumAllOperation(3);
+        System.out.println("Sum all operation is " + calculator.sumAllOperation(3));
     }
 }
