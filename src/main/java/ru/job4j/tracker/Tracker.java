@@ -26,7 +26,7 @@ public class Tracker {
         Item[] result = new Item[this.size];
         int size = 0;
 
-        for (Item item: items) {
+        for (Item item : items) {
             if (item == null) {
                 break;
             }
@@ -40,30 +40,26 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-       int index = indexOf(id);
-       if (index == -1) {
-           return false;
-       }
-       item.setId(items[index].getId());
-       items[index] = item;
-        return true;
+        int index = indexOf(id);
+        boolean result = index != -1;
+        if (result) {
+            items[index] = item;
+        }
+        return result;
     }
 
     public void delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
-            return;
-        }
-
-        if (index == 0) {
-            items[index] = null;
+        boolean result = index != -1;
+        if (result) {
+            if (index == 0) {
+                items[index] = null;
+            } else {
+                System.arraycopy(items, index, items, index - 1, size - index - 1);
+                items[size - 1] = null;
+            }
             size--;
-            return;
         }
-
-        System.arraycopy(items, index, items, index - 1, size - index - 1);
-        items[size - 1] = null;
-        size--;
     }
 
     private int indexOf(int id) {
