@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 public class StartUI {
-    private static void addItem(Input input, Tracker tracker) {
+    public static void addItem(Input input, Tracker tracker) {
         System.out.println("=== Создание новой заявки ===");
         String name = input.askStr("Введите имя: ");
         Item item = new Item(name);
@@ -9,7 +9,7 @@ public class StartUI {
         System.out.println("Добавленная заявка: " + item);
     }
 
-    private static void showAllItems(Tracker tracker) {
+    public static void showAllItems(Tracker tracker) {
         System.out.println("=== Вывод всех заявок ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
@@ -21,7 +21,7 @@ public class StartUI {
         }
     }
 
-    private static void editItem(Input input, Tracker tracker) {
+    public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Редактирование заявки ===");
         int id = input.askInt("Введите id: ");
         String name = input.askStr("Введите имя: ");
@@ -33,7 +33,7 @@ public class StartUI {
         }
     }
 
-    private static void deleteItem(Input input, Tracker tracker) {
+    public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Удаление заявки ===");
         System.out.print("Введите id: ");
         int id = input.askInt("Введите id: ");
@@ -42,7 +42,7 @@ public class StartUI {
         System.out.println(item != null ? "Заявка удалена успешно." : "Ошибка удаления заявки.");
     }
 
-    private static void showItemById(Input input, Tracker tracker) {
+    public static void showItemById(Input input, Tracker tracker) {
         System.out.println("=== Вывод заявки по id ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
@@ -53,7 +53,7 @@ public class StartUI {
         }
     }
 
-    private static void showItemByName(Input input, Tracker tracker) {
+    public static void showItemByName(Input input, Tracker tracker) {
         System.out.println("=== Вывод заявок по имени ===");
         String name = input.askStr("Введите имя: ");
         Item[] items = tracker.findByName(name);
@@ -66,7 +66,7 @@ public class StartUI {
         }
     }
 
-    public void init(Input input, Tracker tracker) {
+    private void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
